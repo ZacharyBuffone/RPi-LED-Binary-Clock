@@ -1,0 +1,113 @@
+﻿  PixelMatrix.cpp
+  Generating Code...
+  Compiling...
+  DisplayManager.cpp
+c:\developer\vs12workspace\led-test\displaymanager.h(11): error C2143: syntax error : missing ';' before '*'
+c:\developer\vs12workspace\led-test\displaymanager.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\developer\vs12workspace\led-test\displaymanager.h(18): error C2061: syntax error : identifier 'Color'
+c:\developer\vs12workspace\led-test\displaymanager.h(19): error C2146: syntax error : missing ';' before identifier 'GetPixel'
+c:\developer\vs12workspace\led-test\displaymanager.h(19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\developer\vs12workspace\led-test\displaymanager.h(19): warning C4183: 'GetPixel': missing return type; assumed to be a member function returning 'int'
+c:\developer\vs12workspace\led-test\displaymanager.h(21): error C2061: syntax error : identifier 'Color'
+c:\developer\vs12workspace\led-test\displaymanager.h(23): error C2061: syntax error : identifier 'PixelMatrix'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(13): error C2039: 'pm' : is not a member of 'DisplayManager'
+          c:\developer\vs12workspace\led-test\displaymanager.h(9) : see declaration of 'DisplayManager'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(13): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(13): error C2061: syntax error : identifier 'PixelMatrix'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(19): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(19): error C2541: 'delete' : cannot delete objects that are not pointers
+c:\developer\vs12workspace\led-test\displaymanager.cpp(22): error C2061: syntax error : identifier 'Color'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(29): error C2065: 'Pixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(29): error C2065: 'p' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(29): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(29): error C2227: left of '->At' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(30): error C2065: 'p' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(30): error C2227: left of '->red' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(30): error C2065: 'r' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(31): error C2065: 'p' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(31): error C2227: left of '->green' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(31): error C2065: 'g' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(32): error C2065: 'p' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(32): error C2227: left of '->blue' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(32): error C2065: 'b' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(33): error C2065: 'p' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(33): error C2227: left of '->active' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(38): error C2143: syntax error : missing ';' before 'DisplayManager::GetPixel'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\developer\vs12workspace\led-test\displaymanager.cpp(39): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\developer\vs12workspace\led-test\displaymanager.cpp(43): error C2064: term does not evaluate to a function taking 1 arguments
+c:\developer\vs12workspace\led-test\displaymanager.cpp(46): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(46): error C2227: left of '->At' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(51): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(51): error C2227: left of '->TogglePixelActivity' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(55): error C2065: 'Color' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(55): error C2146: syntax error : missing ')' before identifier 'r'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(55): error C2761: 'void DisplayManager::FillDisplay(void)' : member function redeclaration not allowed
+c:\developer\vs12workspace\led-test\displaymanager.cpp(55): error C2059: syntax error : ')'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(56): error C2143: syntax error : missing ';' before '{'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(56): error C2447: '{' : missing function header (old-style formal list?)
+c:\developer\vs12workspace\led-test\displaymanager.cpp(63): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(63): error C2227: left of '->ClearMatrix' must point to class/struct/union/generic type
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(67): error C2065: 'PixelMatrix' : undeclared identifier
+c:\developer\vs12workspace\led-test\displaymanager.cpp(67): error C2146: syntax error : missing ')' before identifier 'merging'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(67): error C2761: 'void DisplayManager::MergeMatrices(void)' : member function redeclaration not allowed
+c:\developer\vs12workspace\led-test\displaymanager.cpp(67): error C2059: syntax error : ')'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(68): error C2143: syntax error : missing ';' before '{'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(68): error C2447: '{' : missing function header (old-style formal list?)
+  Generating Code...
+  Compiling...
+  LED-Test.cpp
+c:\developer\vs12workspace\led-test\displaymanager.h(11): error C2143: syntax error : missing ';' before '*'
+c:\developer\vs12workspace\led-test\displaymanager.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\developer\vs12workspace\led-test\displaymanager.h(18): error C2061: syntax error : identifier 'Color'
+c:\developer\vs12workspace\led-test\displaymanager.h(19): error C2146: syntax error : missing ';' before identifier 'GetPixel'
+c:\developer\vs12workspace\led-test\displaymanager.h(19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\developer\vs12workspace\led-test\displaymanager.h(19): warning C4183: 'GetPixel': missing return type; assumed to be a member function returning 'int'
+c:\developer\vs12workspace\led-test\displaymanager.h(21): error C2061: syntax error : identifier 'Color'
+c:\developer\vs12workspace\led-test\displaymanager.h(23): error C2061: syntax error : identifier 'PixelMatrix'
+c:\developer\vs12workspace\led-test\led-test.cpp(11): error C2660: 'DisplayManager::SetPixel' : function does not take 5 arguments
+c:\developer\vs12workspace\led-test\led-test.cpp(12): error C2660: 'DisplayManager::SetPixel' : function does not take 5 arguments
+c:\developer\vs12workspace\led-test\led-test.cpp(13): error C2660: 'DisplayManager::SetPixel' : function does not take 5 arguments
+c:\developer\vs12workspace\led-test\led-test.cpp(14): error C2660: 'DisplayManager::SetPixel' : function does not take 5 arguments
+c:\developer\vs12workspace\led-test\led-test.cpp(15): error C2660: 'DisplayManager::SetPixel' : function does not take 5 arguments
+c:\developer\vs12workspace\led-test\led-test.cpp(18): error C2065: 'PixelMatrix' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(18): error C2146: syntax error : missing ';' before identifier 'pm'
+c:\developer\vs12workspace\led-test\led-test.cpp(18): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(18): error C3861: 'PixelMatrix': identifier not found
+c:\developer\vs12workspace\led-test\led-test.cpp(19): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(19): error C2228: left of '.At' must have class/struct/union
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\led-test.cpp(19): error C2065: 'Pixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(20): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(20): error C2228: left of '.At' must have class/struct/union
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\led-test.cpp(20): error C2065: 'Pixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(21): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(21): error C2228: left of '.At' must have class/struct/union
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\led-test.cpp(21): error C2065: 'Pixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(22): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(22): error C2228: left of '.At' must have class/struct/union
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\led-test.cpp(22): error C2065: 'Pixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(24): error C2065: 'pm' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(26): error C2065: 'Pixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(26): error C2146: syntax error : missing ';' before identifier 'nextPixel'
+c:\developer\vs12workspace\led-test\led-test.cpp(26): error C2065: 'nextPixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(31): error C2065: 'nextPixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(32): error C2065: 'nextPixel' : undeclared identifier
+c:\developer\vs12workspace\led-test\led-test.cpp(32): error C2228: left of '.red' must have class/struct/union
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\led-test.cpp(32): error C2228: left of '.green' must have class/struct/union
+          type is 'unknown-type'
+c:\developer\vs12workspace\led-test\led-test.cpp(32): error C2228: left of '.blue' must have class/struct/union
+          type is 'unknown-type'
+  Generating Code...
