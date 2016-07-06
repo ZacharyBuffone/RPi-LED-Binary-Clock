@@ -11,6 +11,8 @@ private:
 	PixelMatrix* curr_pm_;
 	int height_;
 	int width_;
+	bool IsBlack(Pixel p);
+
 public:
 	DisplayManager(int, int);
 	~DisplayManager();
@@ -20,7 +22,8 @@ public:
 	void TogglePixelActivity(int, int);
 	void FillDisplay(Color, Color, Color);
 	void ClearDisplay();
-	void MergeMatrices(PixelMatrix);
+	void MergeMatrices(PixelMatrix&);
+	void MergeMatrices(PixelMatrix&, int, int);
 	void Display();
 
 };

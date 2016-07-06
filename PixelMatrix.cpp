@@ -58,7 +58,6 @@ void PixelMatrix::Clear()
 	return;
 }
 
-//pixels in THIS take priotity over 
 bool PixelMatrix::Merge(PixelMatrix& merging)
 {
 	if (height_ < merging.height_ || width_ < merging.width_)
@@ -68,9 +67,10 @@ bool PixelMatrix::Merge(PixelMatrix& merging)
 	Pixel* next_pixel_to_change;
 	for (int i = 0; i < merging.height_*merging.width_; i++)
 	{
-		if ()
-		*(pixels_->at(i)) = *(merging.pixels_->at(i));
+		next_pixel_to_merge = merging.pixels_->at(i);
+		next_pixel_to_change = this->pixels_->at(i);
 
+		*next_pixel_to_change = *next_pixel_to_merge;
 	}
 	return true;
 }
@@ -79,9 +79,20 @@ bool PixelMatrix::Merge(PixelMatrix& merging, int start_x, int start_y)
 {
 	if (start_x + merging.width_ > height_ || start_y + merging.height_ > width_)
 		return false;
-	for (int i = 0; i < merging.height_*merging.width_; i++)
+
+	Pixel* next_pixel_to_merge;
+	Pixel* next_pixel_to_change;
+
+	for (int i = 0; i < merging.width_; i++)
 	{
-		
+		for (int j = 0; j < merging.height_; j++)
+		{
+			next_pixel_to_merge = merging.At(i, j);
+			next_pixel_to_change = this->At(start_x + i, start_y + j);
+
+			*next_pixel_to_change = *next_pixel_to_merge;
+		}
 	}
 
+	return true;
 }
