@@ -1,13 +1,22 @@
-﻿  FontGenerator.cpp
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(23): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(27): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(31): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(45): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\developer\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(51): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(56): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(61): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(78): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(82): warning C4018: '<' : signed/unsigned mismatch
-c:\developer\vs12workspace\led-test\fontgenerator.cpp(86): warning C4018: '<' : signed/unsigned mismatch
-  LED-Test.vcxproj -> C:\Developer\VS12Workspace\LED-Matrix\Debug\LED-Test.exe
+﻿  thread.cc
+c:\developer\vs12workspace\led-test\led-matrix\thread.h(5): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  led-matrix.cc
+c:\developer\vs12workspace\led-test\led-matrix\led-matrix.cc(48): error C2079: 'sleep_time' uses undefined struct 'sleep_nanos::timespec'
+c:\developer\vs12workspace\led-test\led-matrix\led-matrix.cc(48): error C2440: 'initializing' : cannot convert from 'initializer-list' to 'int'
+          Only an initializer-list with zero or one elements can be converted to this type
+c:\developer\vs12workspace\led-test\led-matrix\led-matrix.cc(49): error C3861: 'nanosleep': identifier not found
+c:\developer\vs12workspace\led-test\led-matrix\led-matrix.cc(53): error C2290: C++ 'asm' syntax ignored. Use __asm.
+  gpio.cc
+c:\developer\vs12workspace\led-test\led-matrix\gpio.cc(10): fatal error C1083: Cannot open include file: 'sys/mman.h': No such file or directory
+  DisplayManager.cpp
+c:\developer\vs12workspace\led-test\displaymanager.cpp(8): error C2512: 'RGBMatrix' : no appropriate default constructor available
+c:\developer\vs12workspace\led-test\displaymanager.cpp(10): error C2582: 'operator =' function is unavailable in 'RGBMatrix'
+c:\developer\vs12workspace\led-test\displaymanager.cpp(11): error C2659: '=' : function as left operand
+c:\developer\vs12workspace\led-test\displaymanager.cpp(12): error C2659: '=' : function as left operand
+  Generating Code...
+  Compiling...
+  LED-Test.cpp
+c:\developer\vs12workspace\led-test\led-test.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\led-test.cpp(37): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\led-test.cpp(39): warning C4018: '<' : signed/unsigned mismatch
+  Generating Code...

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="LED-Matrix">
+      <UniqueIdentifier>{73868fab-e615-4ac8-80af-590ffecc162f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LED-Test.cpp">
@@ -27,6 +30,15 @@
     <ClCompile Include="FontGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LED-Matrix\gpio.cc">
+      <Filter>LED-Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="LED-Matrix\led-matrix.cc">
+      <Filter>LED-Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="LED-Matrix\thread.cc">
+      <Filter>LED-Matrix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DisplayManager.h">
@@ -37,6 +49,15 @@
     </ClInclude>
     <ClInclude Include="FontGenerator.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LED-Matrix\gpio.h">
+      <Filter>LED-Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="LED-Matrix\led-matrix.h">
+      <Filter>LED-Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="LED-Matrix\thread.h">
+      <Filter>LED-Matrix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

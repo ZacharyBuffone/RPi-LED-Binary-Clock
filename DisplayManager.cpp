@@ -7,6 +7,10 @@ void DrawBlackPixel();
 DisplayManager::DisplayManager(int height, int width)
 {
 
+	rgb_matrix_ = RGBMatrix(&io_);
+	rgb_matrix_.height = height;
+	rgb_matrix_.width = width;
+
 	DisplayManager::height_ = height;
 	DisplayManager::width_ = width;
 
@@ -18,6 +22,8 @@ DisplayManager::~DisplayManager()
 {
 	delete curr_pm_;
 }
+
+
 
 bool DisplayManager::SetPixel(int x, int y, Color r, Color g, Color b)
 {
@@ -69,25 +75,24 @@ void DisplayManager::MergeMatrices(PixelMatrix& merging, int start_x, int start_
 }
 
 
-//Implement the Adafruit LED matrix library
-void DisplayManager::Display()
+void DisplayManager::Update()
 {
-	printf("\n   ");
+	rgb_matrix_.ClearScreen();
 
 	Pixel* next_pixel;
 	for (int i = 0; i < width_; i++)
 	{
 		for (int j = 0; j < height_; j++)
 		{
-			next_pixel = curr_pm_->At(j, i);
-			if (!(next_pixel->red) && !(next_pixel->green) && !(next_pixel->blue))		//Detects if not black pixel
-				printf(".");
-			else
-				printf("X");
-
-			printf(" ");
+			next_pixel = curr_pm_->At(i, j);
+			rgb_matrix_.SetPixel(i, j, next_pixel->red, next_pixel->green, next_pixel->blue);
 		}
-		printf("\n   ");
 	}
+}
+
+//Implement the Adafruit LED matrix library
+void DisplayManager::Display()
+{
+	rgb_matrix_.UpdateScreen();
 	return;
 }

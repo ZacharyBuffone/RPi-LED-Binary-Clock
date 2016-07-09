@@ -113,7 +113,7 @@ void FontGenerator::SetMatrixToCharacter(PixelMatrix* pm, char c)
 		*(pm->At(2, 3)) = Pixel{ 255, 255, 255 };
 		*(pm->At(1, 0)) = Pixel{ 255, 255, 255 };
 	}
-	else //if c == ':'
+	else //if (c == ':')
 	{
 		*(pm->At(1, 0)) = Pixel{ 255, 255, 255 };
 		*(pm->At(1, 3)) = Pixel{ 255, 255, 255 };

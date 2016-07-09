@@ -78,12 +78,18 @@
   <ItemGroup>
     <ClCompile Include="DisplayManager.cpp" />
     <ClCompile Include="FontGenerator.cpp" />
+    <ClCompile Include="LED-Matrix\gpio.cc" />
+    <ClCompile Include="LED-Matrix\led-matrix.cc" />
+    <ClCompile Include="LED-Matrix\thread.cc" />
     <ClCompile Include="LED-Test.cpp" />
     <ClCompile Include="PixelMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DisplayManager.h" />
     <ClInclude Include="FontGenerator.h" />
+    <ClInclude Include="LED-Matrix\gpio.h" />
+    <ClInclude Include="LED-Matrix\led-matrix.h" />
+    <ClInclude Include="LED-Matrix\thread.h" />
     <ClInclude Include="PixelMatrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

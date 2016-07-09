@@ -1,7 +1,7 @@
 #include "PixelMatrix.h"
 
 //PixelMatrix is a matrix of Colors such that coords (x, y)
-//are in vector pixels_ as (x*width) + y.
+//are in vector pixels_ as (x*height) + y.
 
 PixelMatrix::PixelMatrix(int height, int width)
 {
@@ -42,7 +42,7 @@ PixelMatrix::~PixelMatrix()
 
 Pixel* PixelMatrix::At(int x, int y)
 {
-	return pixels_->at((x*width_) + y);
+	return pixels_->at((x*height_) + y);
 }
 
 void PixelMatrix::Clear()
@@ -91,9 +91,12 @@ bool PixelMatrix::Merge(PixelMatrix& merging, int start_x, int start_y)
 		for (int j = 0; j < merging.height_; j++)
 		{
 			next_pixel_to_merge = merging.At(i, j);
-			next_pixel_to_change = this->At(start_x + i, start_y + j);
+			if (next_pixel_to_merge->red && next_pixel_to_merge->green && next_pixel_to_merge->blue)
+			{
+				next_pixel_to_change = this->At(start_x + i, start_y + j);
 
-			*next_pixel_to_change = *next_pixel_to_merge;
+				*next_pixel_to_change = *next_pixel_to_merge;
+			}
 		}
 	}
 

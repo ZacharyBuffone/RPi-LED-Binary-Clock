@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
 		std::vector<PixelMatrix*>* minute = fg.GetMinuteVector();
 		std::vector<PixelMatrix*>* second = fg.GetSecondVector();
 
+
 		for (int i = 0; i < hour->size(); i++)
 			dm.MergeMatrices(*(hour->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), 1);
 		for (int i = 0; i < minute->size(); i++)

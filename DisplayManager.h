@@ -5,12 +5,17 @@
 #include "PixelMatrix.h"
 #include <Windows.h>
 
+#include "LED-Matrix/led-matrix.h"
+
 class DisplayManager
 {
 private:
 	PixelMatrix* curr_pm_;
 	int height_;
 	int width_;
+	GPIO io_;
+	RGBMatrix rgb_matrix_;
+
 	bool IsBlack(Pixel p);
 
 public:
