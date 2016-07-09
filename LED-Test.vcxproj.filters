@@ -24,12 +24,18 @@
     <ClCompile Include="PixelMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FontGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DisplayManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PixelMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

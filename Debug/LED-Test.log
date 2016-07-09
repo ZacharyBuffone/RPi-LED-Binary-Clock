@@ -1,1 +1,13 @@
-﻿  LED-Test.vcxproj -> C:\Developer\VS12Workspace\LED-Matrix\Debug\LED-Test.exe
+﻿  FontGenerator.cpp
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(23): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(27): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(31): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(45): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\developer\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(51): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(56): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(61): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(78): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(82): warning C4018: '<' : signed/unsigned mismatch
+c:\developer\vs12workspace\led-test\fontgenerator.cpp(86): warning C4018: '<' : signed/unsigned mismatch
+  LED-Test.vcxproj -> C:\Developer\VS12Workspace\LED-Matrix\Debug\LED-Test.exe

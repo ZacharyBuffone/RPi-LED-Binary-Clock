@@ -68,9 +68,12 @@ bool PixelMatrix::Merge(PixelMatrix& merging)
 	for (int i = 0; i < merging.height_*merging.width_; i++)
 	{
 		next_pixel_to_merge = merging.pixels_->at(i);
-		next_pixel_to_change = this->pixels_->at(i);
+		if (next_pixel_to_merge->red && next_pixel_to_merge->green && next_pixel_to_merge->blue)
+		{
+			next_pixel_to_change = this->pixels_->at(i);
 
-		*next_pixel_to_change = *next_pixel_to_merge;
+			*next_pixel_to_change = *next_pixel_to_merge;
+		}
 	}
 	return true;
 }

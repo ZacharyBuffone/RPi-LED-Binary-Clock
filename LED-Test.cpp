@@ -1,7 +1,10 @@
 #include <cstdio>
-#include <time.h>
+#include <ctime>
+#include <vector>
+#include <thread>
 #include "DisplayManager.h"
 #include "PixelMatrix.h"
+#include "FontGenerator.h"
 
 static const int HEIGHT = 32;
 static const int WIDTH = 32;
@@ -11,33 +14,38 @@ static const int FONT_BUFFER = 1;
 
 void PrintPixels(DisplayManager& dm);
 
+
 int main(int argc, char* argv[])
 {
 	DisplayManager dm = DisplayManager(HEIGHT, WIDTH);
-	dm.SetPixel(0, 0, 255, 255, 255);
-	dm.SetPixel(2, 9, 255, 255, 255);
-	dm.SetPixel(5, 10, 255, 255, 255);
-	dm.SetPixel(10, 10, 255, 255, 255);
-	dm.SetPixel(10, 5, 255, 255, 255);
+	FontGenerator fg = FontGenerator();
+	bool playing = true;
 
+	while (playing)
+	{
+		system("cls");
+		dm.ClearDisplay();
+		fg.Update();
 
-	PixelMatrix pm = PixelMatrix(4, 3);
-	*pm.At(0, 0) = Pixel{ 255, 255, 255 };
-	*pm.At(1, 0) = Pixel{ 255, 255, 255 };
-	*pm.At(2, 0) = Pixel{ 255, 255, 255 };
-	*pm.At(0, 3) = Pixel{ 255, 255, 255 };
-	*pm.At(1, 3) = Pixel{ 255, 255, 255 };
-	*pm.At(2, 3) = Pixel{ 255, 255, 255 };
-	*pm.At(0, 1) = Pixel{ 255, 255, 255 };
-	*pm.At(0, 2) = Pixel{ 255, 255, 255 };
-	*pm.At(2, 1) = Pixel{ 255, 255, 255 };
-	*pm.At(2, 2) = Pixel{ 255, 255, 255 };
+		std::vector<PixelMatrix*>* hour = fg.GetHourVector();
+		std::vector<PixelMatrix*>* minute = fg.GetMinuteVector();
+		std::vector<PixelMatrix*>* second = fg.GetSecondVector();
 
-	dm.MergeMatrices(pm, 1, 1);
-	dm.Display();
-	PrintPixels(dm);
+		for (int i = 0; i < hour->size(); i++)
+			dm.MergeMatrices(*(hour->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), 1);
+		for (int i = 0; i < minute->size(); i++)
+			dm.MergeMatrices(*(minute->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), FontGenerator::FONT_HEIGHT  + 4);
+		for (int i = 0; i < second->size(); i++)
+			dm.MergeMatrices(*(second->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), (FontGenerator::FONT_HEIGHT *  2) + 7);
+
+		dm.Display();
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(1010));
+	}
 
 	printf("test\n");
+
+	return 0;
 }
 
 void PrintPixels(DisplayManager& dm)
@@ -53,14 +61,4 @@ void PrintPixels(DisplayManager& dm)
 
 	}
 	return;
-}
-
-std::vector<PixelMatrix>* GetBinaryTime()
-{
-	std::vector<PixelMatrix>* font_vector = new std::vector<PixelMatrix>();
-	time_t time;
-
-	time(&time);
-
-
 }

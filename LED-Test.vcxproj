@@ -77,11 +77,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DisplayManager.cpp" />
+    <ClCompile Include="FontGenerator.cpp" />
     <ClCompile Include="LED-Test.cpp" />
     <ClCompile Include="PixelMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DisplayManager.h" />
+    <ClInclude Include="FontGenerator.h" />
     <ClInclude Include="PixelMatrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
