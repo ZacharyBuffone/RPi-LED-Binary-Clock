@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < second->size(); i++)
 			dm.MergeMatrices(*(second->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), (FontGenerator::FONT_HEIGHT *  2) + 7);
 
-		dm.Display();
+		dm.Update();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(1010));
 	}

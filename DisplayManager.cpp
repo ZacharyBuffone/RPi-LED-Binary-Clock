@@ -6,10 +6,9 @@ void DrawBlackPixel();
 
 DisplayManager::DisplayManager(int height, int width)
 {
+	io_.Init();
 
-	rgb_matrix_ = RGBMatrix(&io_);
-	rgb_matrix_.height = height;
-	rgb_matrix_.width = width;
+	rgb_matrix_ = new RGBMatrix(&io_, 32, 1, 1);
 
 	DisplayManager::height_ = height;
 	DisplayManager::width_ = width;
@@ -21,6 +20,7 @@ DisplayManager::DisplayManager(int height, int width)
 DisplayManager::~DisplayManager()
 {
 	delete curr_pm_;
+	delete rgb_matrix_;
 }
 
 
@@ -59,6 +59,7 @@ Pixel DisplayManager::GetPixel(int x, int y)
 
 void DisplayManager::ClearDisplay()
 {
+	rgb_matrix_->Clear();
 	curr_pm_->Clear();
 	return;
 }
@@ -77,7 +78,7 @@ void DisplayManager::MergeMatrices(PixelMatrix& merging, int start_x, int start_
 
 void DisplayManager::Update()
 {
-	rgb_matrix_.ClearScreen();
+	rgb_matrix_->Clear();
 
 	Pixel* next_pixel;
 	for (int i = 0; i < width_; i++)
@@ -85,14 +86,17 @@ void DisplayManager::Update()
 		for (int j = 0; j < height_; j++)
 		{
 			next_pixel = curr_pm_->At(i, j);
-			rgb_matrix_.SetPixel(i, j, next_pixel->red, next_pixel->green, next_pixel->blue);
+			rgb_matrix_->SetPixel(i, j, next_pixel->red, next_pixel->green, next_pixel->blue);
 		}
 	}
 }
 
+
+/*
 //Implement the Adafruit LED matrix library
 void DisplayManager::Display()
 {
-	rgb_matrix_.UpdateScreen();
+	rgb_matrix_->UpdateScreen();
 	return;
 }
+*/

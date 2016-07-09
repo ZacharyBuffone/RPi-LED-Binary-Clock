@@ -3,9 +3,10 @@
 
 #include <cstdio>
 #include "PixelMatrix.h"
-#include <Windows.h>
 
-#include "LED-Matrix/led-matrix.h"
+#include "rpi-rgb-led-matrix/include/led-matrix.h"
+
+using namespace rgb_matrix;
 
 class DisplayManager
 {
@@ -14,7 +15,7 @@ private:
 	int height_;
 	int width_;
 	GPIO io_;
-	RGBMatrix rgb_matrix_;
+	Canvas* rgb_matrix_;
 
 	bool IsBlack(Pixel p);
 
@@ -29,7 +30,7 @@ public:
 	void ClearDisplay();
 	void MergeMatrices(PixelMatrix&);
 	void MergeMatrices(PixelMatrix&, int, int);
-	void Display();
+//	void Display();
 
 };
 
