@@ -1,5 +1,5 @@
-LED-Test: LED-Test.o DisplayManager.o FontGenerator.o PixelMatrix.o librgbmatrix.a
-	g++ -Wall --std=c++11 -pthread LED-Test.o DisplayManager.o FontGenerator.o PixelMatrix.o librgbmatrix.a -o LED-Test
+BinaryClock: LED-Test.o DisplayManager.o FontGenerator.o PixelMatrix.o librgbmatrix.a
+	g++ -Wall --std=c++11 -pthread LED-Test.o DisplayManager.o FontGenerator.o PixelMatrix.o librgbmatrix.a -o BinaryClock
 LED-Test.o: LED-Test.cpp
 	g++ -Wall --std=c++11 LED-Test.cpp -c -o LED-Test.o
 
