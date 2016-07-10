@@ -14,6 +14,9 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+#pre-compile headers
+.h.gch
+
 # Windows shortcuts
 *.lnk
 
