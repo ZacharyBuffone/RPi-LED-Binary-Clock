@@ -16,7 +16,7 @@ PixelMatrix::PixelMatrix(int height, int width)
 	return;
 }
 
-PixelMatrix::PixelMatrix(PixelMatrix& copy_of)
+PixelMatrix::PixelMatrix(const PixelMatrix& copy_of)
 {
 	height_ = copy_of.height_;
 	width_ = copy_of.width_;
@@ -58,7 +58,7 @@ void PixelMatrix::Clear()
 	return;
 }
 
-bool PixelMatrix::Merge(PixelMatrix& merging)
+bool PixelMatrix::Merge(const PixelMatrix& merging)
 {
 	if (height_ < merging.height_ || width_ < merging.width_)
 		return false;

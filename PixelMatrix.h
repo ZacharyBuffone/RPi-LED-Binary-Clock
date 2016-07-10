@@ -10,7 +10,6 @@ typedef struct pixel
 	Color red;
 	Color green;
 	Color blue;
-
 } Pixel;
 
 
@@ -23,7 +22,7 @@ private:
 
 public:
 	PixelMatrix(int, int);
-	PixelMatrix(PixelMatrix&);
+	PixelMatrix(const PixelMatrix&);
 	~PixelMatrix();
 
 	int GetHeight() { return height_; };
@@ -33,7 +32,7 @@ public:
 
 	void Clear();
 
-	bool Merge(PixelMatrix&);
+	bool Merge(const PixelMatrix&);
 	bool Merge(PixelMatrix&, int, int);
 };
 

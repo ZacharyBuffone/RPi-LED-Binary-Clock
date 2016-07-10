@@ -17,13 +17,16 @@ void PrintPixels(DisplayManager& dm);
 
 int main(int argc, char* argv[])
 {
+	//set up locals for Display manager and FontGenerator
 	DisplayManager dm = DisplayManager(HEIGHT, WIDTH);
 	FontGenerator fg = FontGenerator();
 	bool playing = true;
 
+	printf("Binary clock running.\nPress ctrl-c to exit.\n");
+
 	while (playing)
 	{
-		system("cls");
+		//clears the display and updates the font generator
 		dm.ClearDisplay();
 		fg.Update();
 
@@ -31,24 +34,25 @@ int main(int argc, char* argv[])
 		std::vector<PixelMatrix*>* minute = fg.GetMinuteVector();
 		std::vector<PixelMatrix*>* second = fg.GetSecondVector();
 
-
-		for (int i = 0; i < hour->size(); i++)
+		//pointers to the PixelMatrix in font vectors are merged with DisplayManager's matrix
+		for (int i = 0; i < (int) hour->size(); i++)
 			dm.MergeMatrices(*(hour->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), 1);
-		for (int i = 0; i < minute->size(); i++)
+		for (int i = 0; i < (int) minute->size(); i++)
 			dm.MergeMatrices(*(minute->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), FontGenerator::FONT_HEIGHT  + 4);
-		for (int i = 0; i < second->size(); i++)
+		for (int i = 0; i < (int) second->size(); i++)
 			dm.MergeMatrices(*(second->at(i)), 1 + i * (FontGenerator::FONT_WIDTH + 1), (FontGenerator::FONT_HEIGHT *  2) + 7);
 
+		//update and sleep the thread for about 1 sec
 		dm.Update();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(1010));
 	}
 
-	printf("test\n");
-
 	return 0;
 }
 
+
+//for debuging. prints pixels in DisplayManager's matrix
 void PrintPixels(DisplayManager& dm)
 {
 	Pixel next_pixel;

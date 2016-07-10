@@ -10,5 +10,5 @@ FontGenerator.o: FontGenerator.cpp FontGenerator.h
 PixelMatrix.o: PixelMatrix.cpp PixelMatrix.h
 	g++ -Wall --std=c++11 PixelMatrix.h PixelMatrix.cpp -c
 
-clean:
-	rm -f LED-Test.o DisplayManager.o FontGenerator.o PixelMatrix.o
+
+	

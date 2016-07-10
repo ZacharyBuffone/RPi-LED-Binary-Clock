@@ -1,12 +1,17 @@
 #include "DisplayManager.h"
 #include "PixelMatrix.h"
+#include <cstdlib>
 
 void DrawWhitePixel();
 void DrawBlackPixel();
 
 DisplayManager::DisplayManager(int height, int width)
 {
-	io_.Init();
+	if(!(io_.Init()))
+	{
+		printf("\nUnable to init GPIO class. Are you root?\n");
+		exit(1);
+	}
 
 	rgb_matrix_ = new RGBMatrix(&io_, 32, 1, 1);
 
@@ -27,21 +32,22 @@ DisplayManager::~DisplayManager()
 
 bool DisplayManager::SetPixel(int x, int y, Color r, Color g, Color b)
 {
+	//checks if pixel is within bounds of matrix
 	if (x > width_ || y > height_ || x < 0 || y < 0)
 	{
 		std::fprintf(stderr, "DisplayManager: Call to set pixel out of bounds of matrix.\n");
 		return false;
 	}
-	Pixel* p = curr_pm_->At(x, y);
-	p->red = (char)r;
-	p->green = (char)g;
-	p->blue = (char)b;
+
+	//set pixel colors
+	*(curr_pm_->At(x, y)) = { r, g, b };
 
 	return true;
 }
 
 Pixel DisplayManager::GetPixel(int x, int y)
 {
+	//checks if pixel is within bounds of matrix
 	if (x > width_ || y > height_ || x < 0 || y < 0)
 	{
 		std::fprintf(stderr, "DisplayManager: Call to get pixel out of bounds of matrix.\n");
@@ -57,6 +63,7 @@ Pixel DisplayManager::GetPixel(int x, int y)
 //	return;
 //}
 
+//Clears the display and matrix
 void DisplayManager::ClearDisplay()
 {
 	rgb_matrix_->Clear();
@@ -64,22 +71,27 @@ void DisplayManager::ClearDisplay()
 	return;
 }
 
+//Merges the agument matrix into the DisplayManager's matrix
 void DisplayManager::MergeMatrices(PixelMatrix& merging)
 {
 	curr_pm_->Merge(merging);
 	return;
 }
 
+//Merges the argument matrix into the DisplayManager's matrix starting at start_x
+//and start_y
 void DisplayManager::MergeMatrices(PixelMatrix& merging, int start_x, int start_y)
 {
 	curr_pm_->Merge(merging, start_x, start_y);
 }
 
-
+//Pushes pixels from the matrix onto the display
 void DisplayManager::Update()
 {
+	//clears the display for new pixels
 	rgb_matrix_->Clear();
 
+	//pushes new pixels onto the display.
 	Pixel* next_pixel;
 	for (int i = 0; i < width_; i++)
 	{
