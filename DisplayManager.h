@@ -15,12 +15,12 @@ private:
 	int height_;
 	int width_;
 	GPIO io_;
-	Canvas* rgb_matrix_;
+	RGBMatrix* rgb_matrix_;
 
 	bool IsBlack(Pixel p);
 
 public:
-	DisplayManager(int, int);
+	DisplayManager(int, int, int);
 	~DisplayManager();
 	void Update();
 	bool SetPixel(int, int, Color, Color, Color);

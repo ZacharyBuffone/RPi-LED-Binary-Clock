@@ -5,7 +5,7 @@
 void DrawWhitePixel();
 void DrawBlackPixel();
 
-DisplayManager::DisplayManager(int height, int width)
+DisplayManager::DisplayManager(int height, int width, int brightness)
 {
 	if(!(io_.Init()))
 	{
@@ -14,6 +14,7 @@ DisplayManager::DisplayManager(int height, int width)
 	}
 
 	rgb_matrix_ = new RGBMatrix(&io_, 32, 1, 1);
+	rgb_matrix_->SetBrightness(brightness);
 
 	DisplayManager::height_ = height;
 	DisplayManager::width_ = width;

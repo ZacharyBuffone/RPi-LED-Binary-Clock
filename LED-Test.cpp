@@ -2,6 +2,8 @@
 #include <ctime>
 #include <vector>
 #include <thread>
+#include <cstring>
+#include <cstdlib>
 #include "DisplayManager.h"
 #include "PixelMatrix.h"
 #include "FontGenerator.h"
@@ -17,8 +19,15 @@ void PrintPixels(DisplayManager& dm);
 
 int main(int argc, char* argv[])
 {
+	int brightness = 100;
+	for(int i = 0; i < argc; i++)
+	{
+		if(std::strcmp(argv[i], "-b") == 0)
+			brightness = std::atoi(argv[i+1]);
+	}
+
 	//set up locals for Display manager and FontGenerator
-	DisplayManager dm = DisplayManager(HEIGHT, WIDTH);
+	DisplayManager dm = DisplayManager(HEIGHT, WIDTH, brightness);
 	FontGenerator fg = FontGenerator();
 	bool playing = true;
 
